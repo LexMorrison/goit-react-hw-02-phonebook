@@ -3,6 +3,7 @@ import Form from './Form/Form';
 import ContactsList from './ContactsList/ContactsList';
 import { Notification } from './Notification/Notification';
 import { Filter } from './FilterByName/FilterByName';
+import { Container } from './PhoneBook.styled';
 
 class PhoneBook extends React.Component {
   state = {
@@ -42,7 +43,7 @@ class PhoneBook extends React.Component {
   render() {
     const FileredContacts = this.FilteredContacts();
     return (
-      <div>
+      <Container>
         <Form onSubmit={this.formSubmit} />
         <h2>Contacts</h2>
         <Filter value={this.state.filter} selected={this.handleFilter} />
@@ -54,7 +55,7 @@ class PhoneBook extends React.Component {
         ) : (
           <Notification message="There is no any contacts" />
         )}
-      </div>
+      </Container>
     );
   }
 }

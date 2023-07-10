@@ -1,4 +1,5 @@
 import React from 'react';
+import { ListOfPpl, DeleteButt } from './ContatsList.styled';
 
 class ContactsList extends React.Component {
   render() {
@@ -7,17 +8,17 @@ class ContactsList extends React.Component {
         <ul>
           {this.props.info.map(contact => {
             return (
-              <li key={contact.id}>
+              <ListOfPpl key={contact.id}>
                 <p>
                   {contact.name}: {contact.number}
                 </p>
-                <button
+                <DeleteButt
                   type="button"
                   onClick={() => this.props.deleteCont(contact.id)}
                 >
                   Delete
-                </button>
-              </li>
+                </DeleteButt>
+              </ListOfPpl>
             );
           })}
         </ul>
