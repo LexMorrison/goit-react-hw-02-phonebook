@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { ListOfPpl, DeleteButt } from './ContatsList.styled';
 
 class ContactsList extends React.Component {
@@ -28,3 +29,11 @@ class ContactsList extends React.Component {
 }
 
 export default ContactsList;
+
+ContactsList.propTypes = {
+  contact: PropTypes.shape({
+    id: PropTypes.string.isRequired,
+    name: PropTypes.string.isRequired,
+    number: PropTypes.string.isRequired,
+  }),
+};
