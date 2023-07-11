@@ -28,12 +28,13 @@ class ContactsList extends React.Component {
   }
 }
 
-export default ContactsList;
-
 ContactsList.propTypes = {
   contact: PropTypes.shape({
     id: PropTypes.string.isRequired,
     name: PropTypes.string.isRequired,
     number: PropTypes.string.isRequired,
   }),
+  deleteCont: PropTypes.func.isRequired,
 };
+
+export default ContactsList;
